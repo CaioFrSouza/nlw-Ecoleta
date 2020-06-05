@@ -1,0 +1,81 @@
+:root {
+    --title-color: #322153;
+    --Color-Green:#34cb79;
+    --Color-selected:#23ec7e6c;
+    --off-White: #f5f5f5f5;
+    --blod: 700;
+}
+
+.card2{
+    padding: 0 20px;
+    margin: 20px;
+    width: 60%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    max-width: 750px;
+    min-width: 400px;
+    min-height: 800px;
+}
+.card2 h2{
+    padding:20px 0;
+}
+.card1 {
+    min-width: 100px !important;
+    margin: 10px;
+    margin-bottom: 20px;
+    height: 16vh;
+    min-height: 100px;
+    max-height: 150px;
+    margin-left: -10px;
+}
+
+section{
+    margin:20px
+}
+
+.items-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+.items-grid li {
+    background-color: var(--off-White);
+    list-style: none;
+
+    border: 2px solid var(--off-White);
+    border-radius: 8px;
+
+    padding: 2fr 1.5fr 1fr;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    min-width: 100px;
+    cursor: pointer;
+
+    /* margin-right: -50px */
+}
+
+.items-grid li img {
+    padding: 10px;
+}
+
+.items-grid li span {
+padding-bottom: 10px;
+color: var(--title-color);
+}
+
+.items-grid li.Clicked {
+    transition-duration: 300ms;
+    background-color: var(--Color-selected);
+    border:2px solid var(--Color-selected);
+}
+.items-grid li.err{
+    transition-duration: 300ms;
+
+    border:2px solid rgb(255, 0, 0)
+}

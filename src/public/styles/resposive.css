@@ -1,0 +1,16 @@
+
+@media (max-width:900px){
+    .card0{
+        margin-left: 0% !important;
+        transform: translateX(0%);
+        align-content: center;
+        min-width: 360px;
+    }
+    .card1{
+        font-size: 20px;
+    }
+    .items-grid {
+        margin: 0 -10%;
+        /* transform: translateX(10%); */
+    }
+}

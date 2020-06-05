@@ -1,0 +1,47 @@
+.title{
+    font-size: 300%;
+    color:var(--title-color) !important;
+}
+#page-home main p  {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 38px;
+}
+.btn-cad-text{
+    display: none !important;
+    margin:10px;
+    font-size: 2vw;
+}
+.btn-login img{
+    padding-left: 10px;
+    position: relative;
+    display: flex;
+    width: 3vw;
+}
+#page-home main {
+    overflow-x: hidden;
+}
+#page-home main a span{
+    border-radius: 8px 0 0 8px !important;
+    background-color: rgba(0,0,0,0.08) !important;
+    width: 72px !important;
+    height: 72px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.card0{
+    margin-top: 5%;
+    margin-left: 50% !important;
+    transform: translateX(-50%);
+    min-width: 600px;
+    align-content: center;
+
+}
+.pes{
+    margin-top: 50%;
+    width: 100%;
+    margin-left: 73%;
+    transform: translateY(50%);
+    transform: translateX(-51%);
+}

@@ -1,0 +1,30 @@
+:root {
+    --title-color: #322153;
+    --Color-Green:#34cb79;
+    --blod: 700;
+}
+
+body{
+    overflow-X: hidden;
+    visibility: hidden;
+    background-color: rgba(209, 209, 209, 0.308);
+}
+a{
+    text-decoration: none !important;
+}
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--blod);
+}
+h1,h2,h3,h4,h5,h6{
+    color:var(--title-color) !important;
+}
+p{
+    padding:10px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn{    
+    font-size: 17px;
+}
