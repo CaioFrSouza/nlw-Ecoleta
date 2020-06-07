@@ -1,3 +1,4 @@
-$('.navbar-brand').click(()=> {
-    window.location.replace('../public')
-})
+const returnToHome = () => window.location.replace('../public')
+$('.navbar-brand').click(returnToHome)
+$('.back').click(returnToHome)
+

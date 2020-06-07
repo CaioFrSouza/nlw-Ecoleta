@@ -1,19 +1,18 @@
 const StatesUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'
 const StateInput = $('[name = state]')
 const CityInput = $('[name = city]')
+const Loading = $('.loading')
 let bolRes = false
 const ufs = fetch(StatesUrl).then(async(res)=>await res.json())
 const objPost = {
-    data:[]
+    itens:[]
 }
 const changeState = () => {
     StateInput.change(async(e)=> {
-
         CityInput.prop('disabled','true')
         CityInput.html('')
         val = StateInput.val()
         const city = await (await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${val}/distritos`).catch(e=>{
-            console.log(e)
             return CityInput.addClass('is-invalid')
         })).json()
         await city.forEach(element => {
@@ -47,20 +46,25 @@ const resStates = (width) => {
         });
         
     }
-const submit = ()=> {
-    $('form').submit(e=> {
-        e.preventDefault()
-        if(objPost.data.length <= 0)
-            $('.items-grid li').each((index,element)=>{ $(element).addClass('err')})
-        const inputs = $('.form-control').each((index,element)=> {
-            const el = $(element)
-            const val = el.val()
-            if(!val) 
-                return el.addClass('is-invalid')
-            el.removeClass('is-invalid')
+    const submit = ()=> {
+        $('form').submit(e=> {
+            e.preventDefault()
+            $('.form-control').each((index,element)=> {
+                const el = $(element)
+                const val = el.val()
+                if(!val) {
+                    return el.addClass('is-invalid')
+                }
 
-            console.log()
+            if(objPost.itens.length <= 0)
+                return $('.items-grid li').each((index,element)=>{ $(element).addClass('err')})
+
+            Loading.toggleClass('d-flex')
+
+            el.removeClass('is-invalid')
+            $('.items-grid li').each((index,element)=> $(element).removeClass('err'))
         })
+
     })
 }
     $(document).ready(()=> {
@@ -71,22 +75,16 @@ const submit = ()=> {
 })
 
 $('.items-grid li').each(async(index,element)=> {
-    console.log(element)
     $(element).click(()=> {
-            console.log(element)
-            let classBolean = $(element).hasClass('Clicked')
-            let data = element.dataset
-            let index = objPost.data.indexOf(data)
-            if(!classBolean && index == -1){
-                objPost.data.push(data)
-                $(element).addClass('Clicked')
-            }
-            else{
-                $(element).removeClass('Clicked')
-                console.log(index)
-                if(index > -1)
-                    objPost.data.splice(index-1,1)
-            }
+        $(element).toggleClass('Clicked')
+        const elementId = element.dataset.id
+        const index = objPost.itens.indexOf(elementId)
+        let filter
+        if(index > -1){
+            filter = objPost.itens.filter(filterElement=> elementId != filterElement)
+            objPost.itens = filter
+        }
+        else objPost.itens.push(elementId)
         console.log(objPost)
     })
 })

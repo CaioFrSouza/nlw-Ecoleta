@@ -1,6 +1,14 @@
+:root {
+    --title-color: #322153;
+    --Color-Green:#34cb79;
+    --blod: 700;
+}
 .title{
     font-size: 300%;
     color:var(--title-color) !important;
+}
+.d-1 a img {
+    margin: 0px 2px 1px -4px;
 }
 #page-home main p  {
     margin-top: 24px;
@@ -32,16 +40,102 @@
 }
 .card0{
     margin-top: 5%;
-    margin-left: 50% !important;
+    margin-left: 50%;
     transform: translateX(-50%);
     min-width: 600px;
     align-content: center;
 
 }
+.img{
+    height: 50vh;
+}
+#pesquisar .close ::click {
+    border: none;
+}
 .pes{
-    margin-top: 50%;
+    display: flex;
+    flex:1;
+    margin-top: 3vh;
     width: 100%;
-    margin-left: 73%;
-    transform: translateY(50%);
+    margin-left: 70%;
+    transform: translateY(-50%);
     transform: translateX(-51%);
+}
+.customModal{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0E0A14ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.customModal .content {
+    color:white;
+    width: 420px;
+}
+.customModal .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 42px;
+
+}
+.customModal .header a {
+    background: url(../images/icons/x.svg) no-repeat;
+    width: 20px;
+    height: 20px;
+    font-size: 0.01px;
+    display: flex;
+}
+
+.customModal .header h1 {
+    color: white !important;
+    font-size: 36px;
+
+}
+
+.customModal form label{
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+.customModal form .field{
+    display: flex;
+}
+.customModal form input {
+    outline: none;
+    flex:1;
+    background-color: #f0f0f5;
+    border-radius: 8px 0 0 8px;
+    border: 0;
+    padding: 10px ;
+    font-size: 16px;
+    color: #6c6c80;
+}
+.customModal form input:focus{
+    transition: 300ms;
+    border: 3px solid darkgreen;
+}
+.customModal form button{
+    width: 60px;
+    height: 60px;
+    border: 0;
+    background-color: var(--Color-Green);
+    border-radius: 0 8px 8px 0;
+}
+.customModal form button:hover{
+    transition: 300ms;
+
+    background-color: #2fb85e;
+}
+.customModal form button:focus{
+    outline: none;
+    transition: 300ms;
+    border: 3px solid darkgreen;
+}
+.hide{
+    display: none;
 }

@@ -32,13 +32,14 @@
 section{
     margin:20px
 }
-
 .items-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
 }
 .items-grid li {
+    transition-duration: 300ms;
+
     background-color: var(--off-White);
     list-style: none;
 
@@ -70,12 +71,13 @@ color: var(--title-color);
 }
 
 .items-grid li.Clicked {
-    transition-duration: 300ms;
     background-color: var(--Color-selected);
     border:2px solid var(--Color-selected);
 }
 .items-grid li.err{
-    transition-duration: 300ms;
-
     border:2px solid rgb(255, 0, 0)
+}
+.loading{
+    padding-bottom: 20px;
+    display: none;
 }

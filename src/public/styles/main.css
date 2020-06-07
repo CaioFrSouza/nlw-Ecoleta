@@ -7,7 +7,7 @@
 body{
     overflow-X: hidden;
     visibility: hidden;
-    background-color: rgba(209, 209, 209, 0.308);
+    background-color: rgba(209, 209, 209, 0.308) !important;
 }
 a{
     text-decoration: none !important;
@@ -17,14 +17,16 @@ html{
     font-size: var(--blod);
 }
 h1,h2,h3,h4,h5,h6{
-    color:var(--title-color) !important;
+    color:var(--title-color) ;
+    font-weight: 700 !important;
 }
 p{
-    padding:10px;
+    margin:10px;
+    font-weight: 400 !important;
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .btn{    
-    font-size: 17px;
+    font-size: medium
 }

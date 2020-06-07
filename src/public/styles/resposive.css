@@ -1,10 +1,10 @@
 
-@media (max-width:900px){
+@media (max-width:1000px){
     .card0{
-        margin-left: 0% !important;
-        transform: translateX(0%);
-        align-content: center;
-        min-width: 360px;
+        margin: 0 !important;
+        transform: translateX(0%) !important;
+        align-content: center !important;
+        min-width: 360px !important;
     }
     .card1{
         font-size: 20px;
@@ -12,5 +12,30 @@
     .items-grid {
         margin: 0 -10%;
         /* transform: translateX(10%); */
+    }
+    .d-1{
+        display: flex;
+        flex:1 !important;
+        align-items: center;
+        
+    }
+    .pes{
+        margin: 0;
+        width: 50% !important;
+        height: 75% !important;
+        max-height: 100px;
+        margin-top: 15px !important;
+        margin-left: 50% !important;
+    }
+    .customModal .content{
+        width: 300px;
+    }
+    .d-grid{
+        grid-template-columns: 1fr !important;
+    }
+    
+    main .card3 img{
+        object-fit: cover;
+        height: 200px !important;
     }
 }
