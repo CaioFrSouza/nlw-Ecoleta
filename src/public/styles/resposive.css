@@ -1,5 +1,5 @@
 
-@media (max-width:1100px){
+@media (max-width:1200px){
     .display-4{
         font-size: 46px !important;
     }
@@ -18,6 +18,10 @@
     }
     .card1{
         font-size: 20px;
+    }
+    .card2{
+        overflow-y: hidden;
+        padding:0
     }
     .items-grid {
         margin: 0 -10%;
@@ -40,25 +44,43 @@
     .customModal .content{
         width: 300px;
     }
-    .d-grid{
-        grid-template-columns: 1fr !important;
-    }
-    
-    main .card3 img{
-        height: 200px !important;
-    }
+   
     legend{
         display: block !important;
     }
     .cards {
         width: 106%;
     }
+    #search nav{
+        width: 105%;
+    }
 }
-@media (max-width:700px){
+@media (max-width:750px){
+            .d-grid{
+                grid-template-columns: 1fr !important;
+            }
+            
+            main .card3 img{
+                height: 200px !important;
+            }
             main .card3 img {
-                border-radius: 90px;
+                border-radius: 50px;
             }
             main .card3{
                 border-radius: 110px 110px 0 0  !important;
     }
+}
+@media (min-width: 1850px){
+    main .d-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr  ;
+    }
+}
+@media (min-width:2000px){
+    main .d-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width:1300px){ main .d-grid{
+    grid-template-columns: 1fr 1fr;
+}
 }

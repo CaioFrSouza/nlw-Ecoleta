@@ -1,23 +1,18 @@
 const StatesUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'
 const StateInput = $('[name = state]')
 const CityInput = $('[name = city]')
+const ItenInput = $('#itensInput')
 const Loading = $('.loading')
 let bolRes = false
 const ufs = fetch(StatesUrl).then(async(res)=>await res.json())
 const objPost = {
-    itens:[],
-    entidade:"",
-    url:"",
-    address:"",
-    number:"",
-    state:"",
-    city:""
+    iten : []
 
 }
 const changeState = () => {
     StateInput.change(async(e)=> {
         CityInput.prop('disabled','true')
-        CityInput.html('')
+        CityInput.html('<option value="undefined">Selecione a cidade</option>')
         val = StateInput.val()
         const city = await (await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${val}/distritos`).catch(e=>{
             return CityInput.addClass('is-invalid')
@@ -54,24 +49,29 @@ const resStates = (width) => {
     }
     const submit = ()=> {
         $('form').submit(e=> {
-            e.preventDefault()
             $('.form-control').each((index,element)=> {
                 const el = $(element)
                 const val = el.val()
                 if(!val) {
-                    return el.addClass('is-invalid')
+                    e.preventDefault()
+                    el.addClass('is-invalid')
+                    return 
                 }
                 console.log(val)
-
-            if(objPost.itens.length <= 0)
-                return $('.items-grid li').each((index,element)=>{ $(element).addClass('err')})
+                if(CityInput.val().length <= 0){
+                    e.preventDefault()
+                    return $('.items-grid li').each((index,element)=>{ $(element).addClass('err')})
+                }
+                if(objPost.iten.length <= 0){
+                    e.preventDefault()
+                    return $('.items-grid li').each((index,element)=>{ $(element).addClass('err')})
                 
+                }
             Loading.addClass('d-flex')
             el.removeClass('is-invalid')
             $('.items-grid li').each((index,element)=> $(element).removeClass('err'))
             const data = element.dataset.name
-            objPost[data] = val
-             
+            ItenInput.val(Array(objPost.iten))
 
         })
 
@@ -82,13 +82,15 @@ $('.items-grid li').each(async(index,element)=> {
     $(element).click(()=> {
         $(element).toggleClass('Clicked')
         const elementId = element.dataset.id
-        const index = objPost.itens.indexOf(elementId)
+        const index = objPost.iten.indexOf(elementId)
         let filter
         if(index > -1){
             filter = objPost.itens.filter(filterElement=> elementId != filterElement)
-            objPost.itens = filter
+            Array(objPost.iten) = Array(filter)
         }
-        else objPost.itens.push(elementId)
+        else objPost.iten.push(elementId)
+
+
     })
 })
 

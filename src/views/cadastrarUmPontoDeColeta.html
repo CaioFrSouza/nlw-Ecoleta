@@ -4,17 +4,17 @@
     {% endblock styles %}
 
 {% block content %}
+{%include "includes/navBarReturn.html"%}
 <div id="cadastro" class="container-fluid">
 
 
 
-            {%include "includes/navBarReturn.html"%}
 
             <main>
                 <div class="card card2">
                     <div class="card-body">
                         <h1 class="card-title">Cadastrar ponto de coleta</h1>
-                        <form action="">
+                        <form action="../cadastrar" method ="POST">
                                 <section>
                                     <legend>
                                         <h2>Dados da entidade</h2>
@@ -69,33 +69,34 @@
                                         <h2>Itens de coleta</h2>
                                         <span>Selecione um ou mais itens de coleta</span>
                                     </legend>
+                                    <input type="hidden" name="itens" id="itensInput">
                                     <div class="items-grid">
-                                        <li data-id =1>
+                                        <li data-id ="Lâmpadas">
                                             <img src="icons/lampadas.svg" alt="Lâmpadas">
                                             <span>Lâmpadas</span>
                                         </li>
 
-                                        <li data-id =2>
+                                        <li data-id ="Pilhas e Baterias">
                                             <img src="icons/baterias.svg" alt="Pilhas e Baterias" >
                                             <span>Pilhas e Baterias</span>
                                         </li>
 
-                                        <li data-id =3>
+                                        <li data-id ="Papéis e Papelão">
                                             <img src="icons/papeis-papelao.svg" alt="Papéis e Papelão" >
                                             <span>Papéis e Papelão</span>
                                         </li>
 
-                                        <li data-id =4>
+                                        <li data-id ="Resíduos Eletronicos">
                                             <img src="icons/eletronicos.svg" alt="Resíduos Eletronicos" >
                                             <span>Resíduos Eletronicos</span>
                                         </li>
 
-                                        <li data-id =5>
+                                        <li data-id ="Resíduos Organicos">
                                             <img src="icons/organicos.svg" alt="Resíduos Organicos" >
                                             <span>Resíduos Organicos</span>
                                         </li>
 
-                                        <li data-id =6>
+                                        <li data-id ="Óleo">
                                             <img src="icons/oleo.svg" alt="Óleo" >
                                             <span>Óleo</span>
                                         </li>
@@ -111,7 +112,11 @@
                     </div>
                 </div>
             </main>
+        {% if cadastro == true %}
+{%include 'includes/sucessModal.html'%}
+        {% endif %}
 {% endblock content %}
+
 
 {% block scripts %}
 <script src="js/cadastro.js"></script>

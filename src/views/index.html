@@ -5,9 +5,9 @@
     {% endblock styles %}
     
 {% block content %}
+        {%include "includes/navBarHome.html"%}
     <div id="page-home" class="container-fluid">
         <div class ="content"> 
-        {%include "includes/navBarHome.html"%}
             <main>
                 <div class="jumbotron card0 shadow p-3 mb-5 rounded">
                     <h1 class="display-4 col-sm title">{{title}}</h1>
@@ -45,7 +45,3 @@
 {% block scripts %}
     <script src="js/home.js"></script>
 {% endblock scripts %}
-
-
-</body>
-</html>

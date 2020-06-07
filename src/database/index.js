@@ -63,14 +63,12 @@ module.exports = {
         if(err)
             return reject(err)
         console.log('cadastrado com sucesso')
-        console.log(this)
         resolve('Cadastrado')
     })}),
     delete:(id) => new Promise((resolve,reject)=>{
         db.run(`DELETE FROM places WHERE id=?`,[id],function(err) {
             if(err)
                 reject( {err} )
-            console.log(this)
             resolve('Deletado com sucessos')
         })
     })
