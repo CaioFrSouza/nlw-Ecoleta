@@ -33,10 +33,12 @@ main .d-grid{
     gap:16px;
 }
 main .card3{
-    /* margin-top: 10px; */
+    margin-top: 10px;
+    max-width: 990px;
     border-radius:  20px 20px 0 0 !important;
 }
 main .card3 img{
+    object-fit: cover;
     border-radius: 20px 20px  0 0;
     height: 300px;
 }

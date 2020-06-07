@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoleta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icons/organicos.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/resposive.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+
+    {% block styles%}
+    {% endblock styles%}
+</head>
+<body>
+
+        <div class ="content"> 
+    {% block content %}
+    {% endblock content %}
+    </div>
+
+
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/responsive.js"></script>
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+</html>

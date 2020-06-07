@@ -81,3 +81,14 @@ color: var(--title-color);
     padding-bottom: 20px;
     display: none;
 }
+legend{
+    display: flex;
+    flex:1;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+legend span{
+    font-size: 17px;
+}

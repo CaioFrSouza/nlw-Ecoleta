@@ -1,4 +1,4 @@
-const loginBtnText = $('#btn-cad-text')
+const CadBtnText = $('#btn-cad-text')
 const boxImage = $('#image')
 const btnText = $('#btn-Text-Pes')
 // const StateInput = $('[name = state]')
@@ -15,12 +15,12 @@ function resize (callback) {
 const Responsive = (width)=> {
 
     if(width < 1250){
-        loginBtnText.css('display',"none")
+        CadBtnText.css('display',"none")
         boxImage.removeClass('col-6')
     }
     else{
         boxImage.addClass('col-6')
-        loginBtnText.css('display',"inline-block")
+        CadBtnText.css('display',"inline-block")
     }
 }
 $(document).ready(()=> {

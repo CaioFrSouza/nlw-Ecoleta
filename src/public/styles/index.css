@@ -44,15 +44,18 @@
     transform: translateX(-50%);
     min-width: 600px;
     align-content: center;
+    max-height: 1000px;
+    max-width: 1000px;
 
 }
 .img{
-    height: 50vh;
+    height: 50vh !important;
 }
 #pesquisar .close ::click {
     border: none;
 }
 .pes{
+    margin-top: 66% !important;
     display: flex;
     flex:1;
     margin-top: 3vh;
@@ -64,6 +67,7 @@
 .customModal{
     position: fixed;
     top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: #0E0A14ef;
@@ -84,7 +88,7 @@
 
 }
 .customModal .header a {
-    background: url(../images/icons/x.svg) no-repeat;
+
     width: 20px;
     height: 20px;
     font-size: 0.01px;
@@ -138,4 +142,7 @@
 }
 .hide{
     display: none;
+} 
+p.lead{
+    margin-left: 25px;
 }
