@@ -25,7 +25,7 @@ app.get('/search',async(req,res)=> {
         return res.render('search.html',{
             places:0
         })
-    const places = await db.list('*')
+    const places = await db.list('*',query)
 
 
     return res.render('search.html',{
