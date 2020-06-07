@@ -21,7 +21,6 @@
     }
     .card2{
         overflow-y: hidden;
-        padding:0
     }
     .items-grid {
         margin: 0 -10%;
@@ -56,6 +55,15 @@
     }
 }
 @media (max-width:750px){
+    .card2{
+        overflow-y: hidden;
+        padding:0;
+        margin:0;
+        width: 100%;
+    }
+    .items-grid {
+        grid-template-columns: 1fr 1fr;
+    }
             .d-grid{
                 grid-template-columns: 1fr !important;
             }
