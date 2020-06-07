@@ -5,7 +5,14 @@ const Loading = $('.loading')
 let bolRes = false
 const ufs = fetch(StatesUrl).then(async(res)=>await res.json())
 const objPost = {
-    itens:[]
+    itens:[],
+    entidade:"",
+    url:"",
+    address:"",
+    number:"",
+    state:"",
+    city:""
+
 }
 const changeState = () => {
     StateInput.change(async(e)=> {
@@ -16,9 +23,8 @@ const changeState = () => {
             return CityInput.addClass('is-invalid')
         })).json()
         await city.forEach(element => {
-            const CityId = element.id
             const name = element.nome
-            CityInput.append(`<option value="${CityId}">${name}</option>`)
+            CityInput.append(`<option value="${name}">${name}</option>`)
         })
         CityInput.removeAttr('disabled')
         
@@ -55,24 +61,22 @@ const resStates = (width) => {
                 if(!val) {
                     return el.addClass('is-invalid')
                 }
+                console.log(val)
 
             if(objPost.itens.length <= 0)
                 return $('.items-grid li').each((index,element)=>{ $(element).addClass('err')})
-
-            Loading.toggleClass('d-flex')
-
+                
+            Loading.addClass('d-flex')
             el.removeClass('is-invalid')
             $('.items-grid li').each((index,element)=> $(element).removeClass('err'))
+            const data = element.dataset.name
+            objPost[data] = val
+             
+
         })
 
     })
 }
-    $(document).ready(()=> {
-        changeState()
-        resize(resStates)
-        submit()
-
-})
 
 $('.items-grid li').each(async(index,element)=> {
     $(element).click(()=> {
@@ -85,6 +89,13 @@ $('.items-grid li').each(async(index,element)=> {
             objPost.itens = filter
         }
         else objPost.itens.push(elementId)
-        console.log(objPost)
     })
+})
+
+
+$(document).ready(()=> {
+    changeState()
+    resize(resStates)
+    submit()
+
 })

@@ -50,4 +50,15 @@
     legend{
         display: block !important;
     }
+    .cards {
+        width: 106%;
+    }
+}
+@media (max-width:700px){
+            main .card3 img {
+                border-radius: 90px;
+            }
+            main .card3{
+                border-radius: 110px 110px 0 0  !important;
+    }
 }
